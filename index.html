@@ -500,7 +500,7 @@
             <div class="header-meta">
                 <div class="contact-info">
                     <strong>UX/UI Designer & Content Strategist</strong><br>
-                    Berlin | info@wolfgegenlicht.de | +49 151 11 528 728<br>
+                    Berlin | <span id="email1"></span> | +49 151 11 528 728<br>
                     <a href="https://www.wolfgegenlicht.de">wolfgegenlicht.de</a>
                 </div>
                 <a href="https://www.wolfgegenlicht.de" class="portfolio-button">zur Website</a>
@@ -975,7 +975,7 @@
                     <p class="bold">Wolfgang Stefani</p>
                     <p>UX/UI Designer & Content Strategist</p>
                     <p>
-                        <span class="emoji">📧</span> info@wolfgegenlicht.de<br>
+                        <span class="emoji">📧</span> <span id="email2"></span><br>
                         <span class="emoji">📱</span> +49 151 11 528 728
                     </p>
                 </div>
@@ -996,5 +996,30 @@
         </div>
 
     </div>
+
+    <script>
+        // Email obfuscation to prevent bot scraping
+        (function() {
+            // Encoded email: info@wolfgegenlicht.de
+            var encoded = [105,110,102,111,64,119,111,108,102,103,101,103,101,110,108,105,99,104,116,46,100,101];
+            var email = encoded.map(function(c) { return String.fromCharCode(c); }).join('');
+
+            // Display email in both locations
+            var email1 = document.getElementById('email1');
+            var email2 = document.getElementById('email2');
+
+            if (email1) {
+                email1.textContent = email;
+            }
+
+            if (email2) {
+                var link = document.createElement('a');
+                link.href = 'mailto:' + email;
+                link.textContent = email;
+                link.className = 'link';
+                email2.appendChild(link);
+            }
+        })();
+    </script>
 </body>
 </html>
