@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wolfgang Stefani - Content-Arbeitsproben</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        @page {
+            size: A4;
+            margin: 15mm;
+        }
+
+        :root {
+            --primary-color: #fde74c;
+            --secondary-color: #4051bf;
+            --secondary-color-deemphasize: #ced5ff;
+            --light-bg: #f9f9f9;
+            --dark-text: #26293e;
+            --dark-text-deemphasize: #8e90a1;
+            --border-color: #ededed;
+            --white: #ffffff;
+            --transition: all 0.2s ease-in-out;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Sora', system-ui, -apple-system, sans-serif;
+            font-size: 10pt;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background-color: white;
+            background-image: radial-gradient(var(--secondary-color-deemphasize) 0.5px, white 0.5px);
+            background-size: 10px 10px;
+        }
+        
+        .container {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            margin-bottom: 48px;
+            padding-bottom: 32px;
+            text-align: center;
+        }
+
+        .header-title {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 16px;
+            color: var(--dark-text);
+        }
+
+        .header-subtitle {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            font-weight: 400;
+            margin-bottom: 24px;
+            color: var(--dark-text-deemphasize);
+        }
+        
+        .header-meta {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 24px;
+            gap: 24px;
+        }
+
+        .contact-info {
+            font-size: 0.9rem;
+            line-height: 1.8;
+            color: var(--dark-text);
+        }
+
+        .contact-info a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-info a:hover {
+            color: var(--dark-text);
+        }
+
+        .portfolio-button {
+            display: block;
+            background: var(--primary-color);
+            color: var(--dark-text);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .portfolio-button:hover {
+            background: #f5d93b;
+            transform: translateY(-2px);
+        }
+        
+        /* Section Styles */
+        .section {
+            margin-bottom: 64px;
+            margin-top: 64px;
+            page-break-inside: avoid;
+        }
+
+        .section-header {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 700;
+            margin-bottom: 32px;
+            border-bottom: 3px solid var(--primary-color);
+            display: inline-block;
+            letter-spacing: 1px;
+        }
+
+        .section-number {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        .section-subtitle {
+            margin-bottom: 32px;
+            font-size: 1rem;
+            color: var(--dark-text-deemphasize);
+            line-height: 1.6;
+        }
+
+        .project-category {
+            margin-bottom: 8px;
+            font-weight: 700;
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .further-projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .further-projects-grid > div {
+            font-size: 0.95rem;
+        }
+
+        .footer-note {
+            margin-top: 24px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--dark-text-deemphasize);
+        }
+
+        .further-projects-title {
+            font-weight: 700;
+            margin-bottom: 24px;
+            font-size: 1.1rem;
+            color: var(--dark-text);
+        }
+
+        .further-projects-section {
+            margin-top: 48px;
+        }
+        
+        .divider {
+            border-top: 1px solid var(--border-color);
+            margin: 32px 0;
+        }
+
+        .thick-divider {
+            border-top: 2px solid var(--border-color);
+            margin: 48px 0;
+        }
+        
+        /* Table of Contents */
+        .toc {
+            margin-bottom: 48px;
+            background: var(--light-bg);
+            padding: 32px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .toc-item {
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+
+        .toc-item a {
+            color: var(--dark-text);
+            text-decoration: none;
+            transition: var(--transition);
+            display: block;
+            padding: 12px 16px;
+            border-radius: 12px;
+            font-weight: 500;
+        }
+
+        .toc-item a:hover {
+            color: var(--secondary-color);
+            background: white;
+            transform: translateX(8px);
+        }
+        
+        /* Article/Project Styles */
+        .article, .project {
+            margin-bottom: 48px;
+            page-break-inside: avoid;
+            background: white;
+            padding: 32px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .article:hover, .project:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .article-title, .project-title {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--dark-text);
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .article-title::after, .project-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+
+        .article-title + p {
+            margin: 16px 0;
+        }
+
+        .article-meta {
+            font-size: 0.9rem;
+            color: var(--dark-text-deemphasize);
+            margin-top: 16px;
+        }
+
+        .article-description {
+            font-size: 1rem;
+            margin-bottom: 16px;
+            line-height: 1.7;
+            color: var(--dark-text);
+        }
+        
+        .topics {
+            margin-top: 16px;
+        }
+
+        .topics-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            color: var(--dark-text);
+        }
+
+        .topics ul {
+            margin-left: 24px;
+            font-size: 0.95rem;
+        }
+
+        .topics li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+            color: var(--dark-text);
+        }
+
+        .link {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .link:hover {
+            color: var(--dark-text);
+            text-decoration: underline;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #fffbea 0%, #fff9d6 100%);
+            border-left: 4px solid var(--primary-color);
+            padding: 24px;
+            margin: 24px 0;
+            font-size: 0.95rem;
+            border-radius: 12px;
+            line-height: 1.7;
+        }
+
+        .result-box {
+            background: linear-gradient(135deg, #131520 0%, #1e2147 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 24px;
+            margin-top: 24px;
+            font-size: 0.95rem;
+        }
+
+        .result-box ul {
+            margin-left: 24px;
+        }
+
+        .result-box li {
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .result-title {
+            font-weight: 600;
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+            color: white;
+        }
+        
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, auto);
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .about-item {
+            font-size: 0.95rem;
+            background: var(--light-bg);
+            padding: 24px;
+            border-radius: 15px;
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+        }
+
+        .about-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .about-item-title {
+            font-weight: 700;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+            color: var(--dark-text);
+        }
+
+        .about-item p {
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+        
+        /* Footer/Contact */
+        .footer-contact {
+            margin-top: 96px;
+            padding: 48px 0;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .footer-contact h2 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
+            margin-bottom: 24px;
+            font-weight: 600;
+            color: var(--dark-text);
+        }
+
+        .contact-grid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            font-size: 0.95rem;
+            color: var(--dark-text-deemphasize);
+        }
+
+        .contact-grid > div {
+            max-width: 600px;
+        }
+
+        .contact-grid p {
+            line-height: 1.8;
+            margin-bottom: 8px;
+        }
+
+        .contact-grid .emoji {
+            font-size: 1rem;
+            margin-right: 4px;
+        }
+        
+        /* Utilities */
+        .bold {
+            font-weight: 700;
+            color: var(--dark-text);
+        }
+
+        ul {
+            margin-left: 24px;
+        }
+
+        ul li {
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+
+        .emoji {
+            font-size: 1.5rem;
+            margin-right: 8px;
+        }
+
+        .page-break {
+            page-break-before: always;
+            margin: 64px 0;
+        }
+
+        .no-break {
+            page-break-inside: avoid;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 24px 16px;
+            }
+
+            .header-meta {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .article, .project {
+                padding: 24px;
+            }
+
+            .toc {
+                padding: 24px;
+            }
+
+            .footer-contact {
+                padding: 32px 24px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                background-image: none;
+            }
+
+            .article:hover, .project:hover,
+            .about-item:hover {
+                transform: none;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="header-title">WOLFGANG STEFANI</h1>
+            <p class="header-subtitle">Content-Arbeitsproben & Publikationen</p>
+            <div class="header-meta">
+                <div class="contact-info">
+                    <strong>UX/UI Designer & Content Strategist</strong><br>
+                    Berlin | info@wolfgegenlicht.de | +49 151 11 528 728<br>
+                    <a href="https://www.wolfgegenlicht.de">wolfgegenlicht.de</a>
+                </div>
+                <a href="https://www.wolfgegenlicht.de" class="portfolio-button">zur Website</a>
+            </div>
+        </div>
+
+        <!-- Table of Contents -->
+        <div class="section toc">
+            <h2 class="section-header"><span class="section-number">00 —</span> INHALTSVERZEICHNIS</h2>
+            <div>
+                <div class="toc-item"><a href="#section-01"><strong>01 —</strong> Veröffentlichte Fachartikel</a></div>
+                <div class="toc-item"><a href="#section-02"><strong>02 —</strong> Website-Projekte</a></div>
+                <div class="toc-item"><a href="#section-03"><strong>03 —</strong> Workbooks & PDFs</a></div>
+                <div class="toc-item"><a href="#section-04"><strong>04 —</strong> Blog-Artikel</a></div>
+            </div>
+        </div>
+
+
+        <!-- Section 01: Published Articles -->
+        <div class="section" id="section-01">
+            <h2 class="section-header"><span class="section-number">01 —</span> VERÖFFENTLICHTE FACHARTIKEL</h2>
+            <p class="section-subtitle">Ausgewählte Publikationen in Fachmagazinen</p>
+
+            <div class="article no-break">
+                <h3 class="article-title">t3n Magazin</h3>
+                <p class="bold" >"So sammelst du mit User-Interviews Daten für deine Personas"</p>
+                
+                <p class="article-description">
+                    <strong>Über den Artikel:</strong><br>
+                    Umfassender Guide zu User-Interviews für die Persona-Entwicklung. Von der Vorbereitung über die Durchführung bis zur Auswertung.
+                </p>
+                
+                <div class="topics">
+                    <p class="topics-title">Themen:</p>
+                    <ul>
+                        <li>Interviewpartner finden und Vorbereitung</li>
+                        <li>Gesprächsführung und Fragetechniken</li>
+                        <li>Praktische Tipps für offene Fragen</li>
+                        <li>Kategorisierung und Auswertung der Daten</li>
+                    </ul>
+                </div>
+                
+                <p class="article-meta">
+                    <strong>Link:</strong> <a href="https://t3n.de/news/sammelst-user-interviews-daten-1285761/" class="link">t3n.de/news/sammelst-user-interviews-daten-1285761/</a><br>
+                    <strong>Datum:</strong> 2020 | <strong>Umfang:</strong> ~2.500 Wörter
+                </p>
+            </div>
+
+
+            <div class="article no-break">
+                <h3 class="article-title">Raidboxes Blog</h3>
+                <p class="bold" >"Dark Patterns Beispiele: So deckst du sie auf"</p>
+                
+                <p class="article-description">
+                    <strong>Über den Artikel:</strong><br>
+                    Tiefgreifender Artikel über manipulative Design-Patterns im Onlinemarketing. Mit konkreten Beispielen und psychologischen Hintergründen.
+                </p>
+                
+                <div class="topics">
+                    <p class="topics-title">Themen:</p>
+                    <ul>
+                        <li>Was sind Dark Patterns und wie funktionieren sie?</li>
+                        <li>Psychologische Mechanismen (Herdentrieb, Mere-Exposure-Effekt)</li>
+                        <li>10+ konkrete Beispiele (Aktivitäts-Benachrichtigungen, Roach Motel, Confirshaming, etc.)</li>
+                        <li>Rechtliche Aspekte und Schutzmaßnahmen</li>
+                        <li>Zukunft von Dark Patterns (Voice, AI, AR)</li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-box">
+                    <strong>Besonderheit:</strong><br>
+                    Dieser Artikel wurde ins Japanische übersetzt und auf darkpatterns.jp veröffentlicht, einer führenden japanischen Ressource für UX und ethisches Design.
+                </div>
+                
+                <p class="article-meta">
+                    <strong>Link:</strong> <a href="https://blog.raidboxes.io/security/dark-patterns/" class="link">blog.raidboxes.io/security/dark-patterns/</a><br>
+                    <strong>Link (japanisch):</strong> <a href="https://darkpatterns.jp/blog/examples-of-design/" class="link">darkpatterns.jp/blog/examples-of-design/</a><br>
+                    <strong>Datum:</strong> Januar 2023 | <strong>Umfang:</strong> ~3.500 Wörter
+                </p>
+            </div>
+
+
+            <div class="article no-break">
+                <h3 class="article-title">Raidboxes Blog</h3>
+                <p class="bold" >"Customer Persona erstellen: So geht's Schritt für Schritt"</p>
+                
+                <p class="article-description">
+                    <strong>Über den Artikel:</strong><br>
+                    Praktischer Guide zur Erstellung von Customer Personas für besseres Marketing und UX-Design.
+                </p>
+                
+                <div class="topics">
+                    <p class="topics-title">Themen:</p>
+                    <ul>
+                        <li>Was sind Customer Personas und warum sind sie wichtig?</li>
+                        <li>Schritt-für-Schritt Anleitung zur Persona-Entwicklung</li>
+                        <li>Datenquellen und Research-Methoden</li>
+                        <li>Praktische Anwendung in Marketing und Design</li>
+                    </ul>
+                </div>
+                
+                <p class="article-meta">
+                    <strong>Link:</strong> <a href="https://blog.raidboxes.io/webdesign-development/customer-persona/" class="link">blog.raidboxes.io/webdesign-development/customer-persona/</a><br>
+                    <strong>Datum:</strong> 2021 | <strong>Umfang:</strong> ~2.000 Wörter
+                </p>
+            </div>
+        </div>
+
+        <!-- Page Break -->
+        <div class="page-break"></div>
+
+        <!-- Section 02: Website Projects -->
+        <div class="section" id="section-02">
+            <h2 class="section-header"><span class="section-number">02 —</span> WEBSITE-PROJEKTE</h2>
+            <p class="section-subtitle">Ausgewählte Projekte mit Content-Fokus</p>
+
+            <div class="project no-break">
+                <p class="project-category">Content-Strategie & SEO-Optimierung</p>
+                <h3 class="project-title">Zahnzusatzversicherungen-Vergleich.com (ZZV)</h3>
+                
+                <p class="article-description">
+                    <strong>Aufgabe:</strong><br>
+                    Versicherungsdeutsch in verständliche, nutzerzentrierte Texte übersetzen. Komplette Content-Strategie und Neuschreibung der Website-Texte.
+                </p>
+                
+                <p class="article-description">
+                    <strong>Mein Ansatz:</strong>
+                </p>
+                <ul>
+                    <li>Analyse der Zielgruppe und Pain Points</li>
+                    <li>Umfassende Content-Auditierung aller Seiten</li>
+                    <li>Neuschreibung aller Texte für bessere Verständlichkeit</li>
+                    <li>SEO-Optimierung und Keyword-Strategie</li>
+                    <li>UX-Optimierung der Content-Architektur</li>
+                </ul>
+                
+                <div class="result-box">
+                    <p class="result-title">Ergebnis:</p>
+                    <ul>
+                        <li><strong>Conversion-Steigerung von 2,73% auf 9,17%</strong> (3,4x Verbesserung)</li>
+                        <li><strong>Google-Ranking von Seite 3 auf Seite 1</strong></li>
+                        <li>Deutlich reduzierte Absprungrate</li>
+                        <li>Messbar bessere User-Zufriedenheit</li>
+                    </ul>
+                </div>
+                
+                <p class="article-meta">
+                    <strong>Link:</strong> <a href="https://zahnzusatzversicherungen-vergleich.com" class="link">zahnzusatzversicherungen-vergleich.com</a><br>
+                    <strong>Jahr:</strong> 2021 - heute
+                </p>
+            </div>
+
+
+            <div class="project no-break">
+                <p class="project-category">Content-Audit & Informationsarchitektur</p>
+                <h3 class="project-title">Schneeberger.com</h3>
+                
+                <p class="article-description">
+                    <strong>Aufgabe:</strong><br>
+                    86+ B2B-Produktseiten überarbeiten und Content-Strategie für technische Produkte entwickeln.
+                </p>
+                
+                <p class="article-description">
+                    <strong>Mein Ansatz:</strong>
+                </p>
+                <ul>
+                    <li>Systematischer Content-Audit aller 86+ Produktseiten</li>
+                    <li>Analyse der Produktnavigation und Informationsarchitektur</li>
+                    <li>Neustrukturierung der Content-Hierarchie</li>
+                    <li>Optimierung von Produktbeschreibungen für B2B-Zielgruppe</li>
+                    <li>Verbesserung der internen Verlinkung</li>
+                </ul>
+                
+                <div class="result-box">
+                    <p class="result-title">Ergebnis:</p>
+                    <ul>
+                        <li>Klare Content-Struktur für komplexe Produktpalette</li>
+                        <li>Verbesserte Findbarkeit von Produkten</li>
+                        <li>Optimierte User Journey für B2B-Käufer</li>
+                        <li>Reduzierte Absprungrate auf Produktseiten</li>
+                    </ul>
+                </div>
+                
+                <p class="article-meta">
+                    <strong>Link:</strong> <a href="https://schneeberger.com" class="link">schneeberger.com</a><br>
+                    <strong>Jahr:</strong> 2022 - heute
+                </p>
+            </div>
+
+
+            <div class="project no-break">
+                <p class="project-category">Website-Content & Messaging</p>
+                <h3 class="project-title">Bookedoutdentist.de</h3>
+                
+                <p class="article-description">
+                    <strong>Aufgabe:</strong><br>
+                    Content-Erstellung für Zahnärzte, die ihre Praxis auslasten wollen. Komplexe Dienstleistung verständlich kommunizieren.
+                </p>
+                
+                <p class="article-description">
+                    <strong>Mein Ansatz:</strong>
+                </p>
+                <ul>
+                    <li>StoryBrand Framework für klare Messaging-Strategie</li>
+                    <li>Zielgruppengerechte Ansprache für Zahnärzte</li>
+                    <li>Benefits-orientierte Texte statt Feature-Fokus</li>
+                    <li>Call-to-Actions für Conversion-Optimierung</li>
+                </ul>
+                
+                <p class="article-meta">
+                    <strong>Link:</strong> <a href="https://bookedoutdentist.de" class="link">bookedoutdentist.de</a><br>
+                    <strong>Jahr:</strong> 2024
+                </p>
+            </div>
+
+
+            <div class="no-break further-projects-section">
+                <p class="further-projects-title">Weitere Projekte:</p>
+
+                <div class="further-projects-grid">
+                    <div>
+                        <p class="bold">Fairpension.de</p>
+                        <p>Finanzberatung: Content-Strategie für Altersvorsorge-Themen</p>
+                        <p><a href="https://fairpension.de" class="link">fairpension.de</a></p>
+                    </div>
+
+                    <div>
+                        <p class="bold">Dronesolut.com</p>
+                        <p>Drohnen-Dienstleistungen: Technische Inhalte verständlich aufbereitet</p>
+                        <p><a href="https://dronesolut.com" class="link">dronesolut.com</a></p>
+                    </div>
+
+                    <div>
+                        <p class="bold">Cooqie.ch</p>
+                        <p>Food-Plattform: Kulinarische Texte mit Schweizer Zielgruppe</p>
+                        <p><a href="https://cooqie.ch" class="link">cooqie.ch</a></p>
+                    </div>
+
+                    <div>
+                        <p class="bold">Wolfgegenlicht.de</p>
+                        <p>Eigene Website: Portfolio, Blog und UX-Ressourcen</p>
+                        <p><a href="https://wolfgegenlicht.de" class="link">wolfgegenlicht.de</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page Break -->
+        <div class="page-break"></div>
+
+        <!-- Section 03: Workbooks & PDFs -->
+        <div class="section" id="section-03">
+            <h2 class="section-header"><span class="section-number">03 —</span> WORKBOOKS & PDFs</h2>
+            <p class="section-subtitle">Ausgewählte selbst erstellte Content-Ressourcen</p>
+
+            <div class="article no-break">
+                <h3 class="article-title">StoryBrand Script Workbook</h3>
+                
+                <p class="article-meta">
+                    <strong>Format:</strong> PDF-Workbook | <strong>Umfang:</strong> 12 Seiten
+                </p>
+                
+                <p class="article-description">
+                    <strong>Über das Workbook:</strong><br>
+                    Praktisches Arbeitsblatt basierend auf Donald Millers StoryBrand Framework. Hilft Unternehmen, ihre Kernbotschaft zu klären und eine klare Story zu entwickeln.
+                </p>
+                
+                <div class="topics">
+                    <p class="topics-title">Inhalt:</p>
+                    <ul>
+                        <li>7-teiliges StoryBrand Framework erklärt</li>
+                        <li>Schritt-für-Schritt Ausfüllhilfe</li>
+                        <li>Praktische Beispiele</li>
+                        <li>Visuell aufbereitetes Layout</li>
+                    </ul>
+                </div>
+                
+                <p class="article-meta">
+                    <strong>Link:</strong> <a href="http://www.wolfgegenlicht.de/wp-content/uploads/story-brand-script-wolfgegenlicht.pdf" class="link">PDF öffnen</a>
+                </p>
+            </div>
+
+
+            <div class="article no-break">
+                <h3 class="article-title">Das Customer-Focus-Gespräch</h3>
+                
+                <p class="article-meta">
+                    <strong>Format:</strong> Notion-Workbook | <strong>Umfang:</strong> Interaktives Template
+                </p>
+                
+                <p class="article-description">
+                    <strong>Über das Workbook:</strong><br>
+                    Framework für kundenorientierte Verkaufsgespräche. Fokussiert auf Kundenbedürfnisse statt auf Produkt-Features.
+                </p>
+                
+                <div class="topics">
+                    <p class="topics-title">Inhalt:</p>
+                    <ul>
+                        <li>Gesprächsstruktur und Leitfaden</li>
+                        <li>Fragenkatalog für Discovery-Phase</li>
+                        <li>Techniken für aktives Zuhören</li>
+                        <li>Dokumentations-Template</li>
+                    </ul>
+                </div>
+                
+                <p class="article-meta">
+                    <strong>Link:</strong> <a href="https://wolfgegenlicht.notion.site/Das-Customer-Focus-Gespr-ch-2f32adde67de4df2a219c936b03bd1c3?pvs=74" class="link">zum Customer Focus Gespräch</a>
+                </p>
+            </div>
+
+
+            <div class="article no-break">
+                <h3 class="article-title">Content-Plan Template</h3>
+                
+                <p class="article-meta">
+                    <strong>Format:</strong> Notion-Template | <strong>Umfang:</strong> Vollständiges Planning-System
+                </p>
+                
+                <p class="article-description">
+                    <strong>Über das Template:</strong><br>
+                    Umfassendes System für Content-Planung und -Organisation. Von der Ideenfindung bis zur Veröffentlichung.
+                </p>
+                
+                <div class="topics">
+                    <p class="topics-title">Inhalt:</p>
+                    <ul>
+                        <li>Content-Kalender mit Vorlagen</li>
+                        <li>Workflow für Content-Produktion</li>
+                        <li>Checklisten für Qualitätssicherung</li>
+                        <li>Analytics und Performance-Tracking</li>
+                    </ul>
+                </div>
+                
+                <p class="article-meta">
+                    <strong>Link:</strong> <a href="https://wolfgegenlicht.notion.site/Content-Plan-07f122bdda04467f8390f53395d5c7d7?pvs=74" class="link">zum Content Plan</a>
+                </p>
+            </div>
+
+
+            <div class="article no-break">
+                <h3 class="article-title">10 Usability Heuristics Checklist</h3>
+                
+                <p class="article-meta">
+                    <strong>Format:</strong> Notion-Checklist | <strong>Umfang:</strong> Interaktive Checkliste  | <strong>Sprache:</strong> Englisch
+                </p>
+                
+                <p class="article-description">
+                    <strong>Über die Checklist:</strong><br>
+                    Basierend auf Jakob Nielsens 10 Usability-Heuristiken. Praktisches Tool für UX-Audits und Interface-Reviews.
+                </p>
+                
+                <div class="topics">
+                    <p class="topics-title">Inhalt:</p>
+                    <ul>
+                        <li>Alle 10 Heuristiken erklärt</li>
+                        <li>Checkliste für jede Heuristik</li>
+                        <li>Beispiele und Best Practices</li>
+                        <li>Anwendbar auf Websites, Apps und Software</li>
+                    </ul>
+                </div>
+                
+                <p class="article-meta">
+                    <strong>Link:</strong> <a href="https://wolfgegenlicht.notion.site/10-Usability-Heuristics-Checklist-A-Guide-to-Improving-Your-User-Interface-acde7b4fe23540f2a8b594bef28058f7?pvs=74" class="link">zu den Usability Heuristics</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Page Break -->
+        <div class="page-break"></div>
+
+        <!-- Section 04: Blog Articles -->
+        <div class="section" id="section-04">
+            <h2 class="section-header"><span class="section-number">04 —</span> BLOG-ARTIKEL</h2>
+            <p class="section-subtitle">Ausgewählte Blog-Beiträge auf wolfgegenlicht.de</p>
+
+            <div class="article no-break">
+                <h3 class="article-title">"In 4 Schritten eine User Journey Map erstellen"</h3>
+                
+                <p class="article-meta">
+                    <strong>Thema:</strong> User Research & Mapping | <strong>Umfang:</strong> ~1.500 Wörter
+                </p>
+                
+                <p class="article-description">
+                    <strong>Über den Artikel:</strong><br>
+                    Praktischer Guide zur Erstellung von User Journey Maps. Von der Research-Phase bis zur fertigen Visualisierung.
+                </p>
+                
+                <div class="topics">
+                    <p class="topics-title">Inhalt:</p>
+                    <ul>
+                        <li>Was sind User Journey Maps?</li>
+                        <li>4-Schritte-Prozess zur Erstellung</li>
+                        <li>Tools und Templates</li>
+                        <li>Praktische Beispiele</li>
+                        <li>Integration in den Design-Prozess</li>
+                    </ul>
+                </div>
+                
+                <p class="article-meta">
+                    <strong>Link:</strong> <a href="https://wolfgegenlicht.de/in-4-schritten-eine-user-journey-map" class="link">wolfgegenlicht.de/in-4-schritten-eine-user-journey-map</a>
+                </p>
+            </div>
+
+
+            <div class="article no-break">
+                <h3 class="article-title">"Content-Ideen entwickeln: Von der Strategie zur Umsetzung"</h3>
+                
+                <p class="article-meta">
+                    <strong>Thema:</strong> Content-Strategie & Ideenfindung | <strong>Umfang:</strong> ~1.800 Wörter
+                </p>
+                
+                <p class="article-description">
+                    <strong>Über den Artikel:</strong><br>
+                    Systematischer Ansatz für Content-Ideenfindung und -Planung. Praktische Methoden für kontinuierliche Content-Produktion.
+                </p>
+                
+                <div class="topics">
+                    <p class="topics-title">Inhalt:</p>
+                    <ul>
+                        <li>Methoden für Ideenfindung</li>
+                        <li>Content-Audit als Basis</li>
+                        <li>Zielgruppen-Analyse</li>
+                        <li>Content-Formate und Kanäle</li>
+                        <li>Von der Idee zur Umsetzung</li>
+                    </ul>
+                </div>
+                
+                <p class="article-meta">
+                    <strong>Link:</strong> <a href="https://wolfgegenlicht.de/content-ideen-entwickeln/" class="link">wolfgegenlicht.de/content-ideen-entwickeln/</a>
+                </p>
+            </div>
+        </div>
+
+
+        <!-- About Section -->
+        <div class="section">
+            <h2 class="section-header">ÜBER MEINE CONTENT-ARBEIT</h2>
+
+            <p class="section-subtitle">
+                Meine Stärke liegt an der Schnittstelle von Design und Text:
+            </p>
+            
+            <div class="about-grid">
+                <div class="about-item">
+                    <p class="about-item-title"><span class="emoji">🎯</span> User-zentriert</p>
+                    <p>Ich schreibe nicht für Suchmaschinen, sondern für Menschen. Jeder Text entsteht aus tiefem Verständnis für Nutzer-Bedürfnisse.</p>
+                </div>
+                
+                <div class="about-item">
+                    <p class="about-item-title"><span class="emoji">📊</span> Datengetrieben</p>
+                    <p>Erfolg messe ich in Conversion, Rankings und User-Zufriedenheit. Content-Strategie basiert immer auf Daten, nicht Bauchgefühl.</p>
+                </div>
+                
+                <div class="about-item">
+                    <p class="about-item-title"><span class="emoji">🔄</span> Crossmedial</p>
+                    <p>Von Landing Pages bis eBooks, von Blog-Artikeln bis Pitch Decks. Ich denke in Formaten und Kanälen.</p>
+                </div>
+                
+                <div class="about-item">
+                    <p class="about-item-title"><span class="emoji">🧠</span> Psychologisch fundiert</p>
+                    <p>Dark Patterns, Verhaltensökonomie, Conversion-Psychologie: Ich verstehe, wie Menschen online Entscheidungen treffen.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Footer Contact -->
+        <div class="footer-contact">
+            <h2>KONTAKT</h2>
+            <div class="contact-grid">
+                <div>
+                    <p class="bold">Wolfgang Stefani</p>
+                    <p>UX/UI Designer & Content Strategist</p>
+                    <p>
+                        <span class="emoji">📧</span> info@wolfgegenlicht.de<br>
+                        <span class="emoji">📱</span> +49 151 11 528 728
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        <span class="emoji">🌐</span> <a href="https://www.wolfgegenlicht.de" class="link">wolfgegenlicht.de</a><br>
+                        <span class="emoji">💼</span> <span class="link">linkedin.com/in/wolfgang-stefani</span>
+                    </p>
+                    <p>
+                        <strong>Portfolio:</strong> <a href="https://www.wolfgegenlicht.de" class="link">wolfgegenlicht.de</a><br>
+                        <strong>Blog:</strong> <a href="https://www.wolfgegenlicht.de/blog" class="link">wolfgegenlicht.de/blog</a>
+                    </p>
+                </div>
+            </div>
+            <p class="footer-note">
+                Stand: Oktober 2025
+            </p>
+        </div>
+
+    </div>
+</body>
+</html>
